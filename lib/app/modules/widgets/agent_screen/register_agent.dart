@@ -1,4 +1,7 @@
+import 'package:aam_app/app/modules/widgets/register_agent_screen/register_agent_form.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class RegisterAgent extends StatelessWidget {
   final String comeToBeAgent;
@@ -51,21 +54,38 @@ class RegisterAgent extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(vertical: 14),
-            decoration: BoxDecoration(
-              color: Color.fromRGBO(121, 42, 255, 0.08),
-              border: Border.all(color: Colors.transparent, width: 1),
-              borderRadius: BorderRadius.circular(16),
+          ElevatedButton(
+            onPressed: () {
+              Get.to(
+                () => RegisterAgentForm(),
+                transition: Transition.zoom,
+                duration: Duration(milliseconds: 500),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.transparent,
+              shadowColor: Colors.transparent,
+              padding: EdgeInsets.zero,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
-            child: Text(
-              registerButton,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color.fromRGBO(121, 42, 255, 0.75),
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 14),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(121, 42, 255, 0.08),
+                border: Border.all(color: Colors.transparent, width: 1),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Text(
+                registerButton,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color.fromRGBO(121, 42, 255, 0.75),
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                ),
               ),
             ),
           ),
