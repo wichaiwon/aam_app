@@ -9,6 +9,6 @@ class LoginController extends GetxController {
 
   void login() {
     // สามารถเพิ่ม logic การ login ที่นี่หากต้องการ
-    print('Logging in with username: ${username.value}');
+    Get.put(LoginController());
   }
 }
