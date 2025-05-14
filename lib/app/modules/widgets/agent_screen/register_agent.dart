@@ -1,7 +1,6 @@
 import 'package:aam_app/app/modules/widgets/register_agent_screen/register_agent_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class RegisterAgent extends StatelessWidget {
   final String comeToBeAgent;

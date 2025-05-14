@@ -10,16 +10,26 @@ class RegisterAgentForm extends StatefulWidget {
 }
 
 class _RegisterAgentFormState extends State<RegisterAgentForm> {
+  // final TextEditingController _fullNameController = TextEditingController();
+  // final TextEditingController _idCardNumberController = TextEditingController();
+
   bool isChecked = false; // สถานะของ checkbox
+
+  // @override
+  // void dispose() {
+  //   _fullNameController.dispose();
+  //   _idCardNumberController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 0),
           child: IconButton(
-            icon: Icon(Icons.close),
+            icon: Icon(Icons.close, size: 24),
             onPressed: () {
               Get.back();
             },
@@ -34,6 +44,7 @@ class _RegisterAgentFormState extends State<RegisterAgentForm> {
         elevation: 0,
       ),
       body: Container(
+        decoration: BoxDecoration(color: Colors.white),
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,9 +61,44 @@ class _RegisterAgentFormState extends State<RegisterAgentForm> {
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      // final pickedFile = await ImagePicker().pickImage(
+                      //   source: ImageSource.camera,
+                      // );
+                      // if (pickedFile != null) {
+                      //   final inputImage = InputImage.fromFilePath(
+                      //     pickedFile.path,
+                      //   );
+                      //   final textRecognizer =
+                      //       GoogleMlKit.vision.textRecognizer();
+                      //   final RecognizedText recognizedText =
+                      //       await textRecognizer.processImage(inputImage);
+
+                      //   String fullName = '';
+                      //   String idCardNumber = '';
+
+                      //   for (TextBlock block in recognizedText.blocks) {
+                      //     for (TextLine line in block.lines) {
+                      //       if (line.text.contains(
+                      //         RegExp(r'^\d{1}-\d{4}-\d{5}-\d{2}-\d{1}$'),
+                      //       )) {
+                      //         idCardNumber = line.text;
+                      //       } else if (line.text.contains('นาย') ||
+                      //           line.text.contains('นาง') ||
+                      //           line.text.contains('นางสาว')) {
+                      //         fullName += line.text;
+                      //       }
+                      //     }
+                      //   }
+                      //   textRecognizer.close();
+                      //   setState(() {
+                      //     _fullNameController.text = fullName;
+                      //     _idCardNumberController.text = idCardNumber;
+                      //   });
+                      // }
+                    },
                     child: SvgPicture.asset(
-                      'assets/images/scan_profile_card.svg',
+                      'assets/images/scan_id_card.svg',
                       width: 26,
                       height: 26,
                     ),
@@ -62,6 +108,7 @@ class _RegisterAgentFormState extends State<RegisterAgentForm> {
             ),
             SizedBox(height: 10),
             TextField(
+              // controller: _fullNameController,
               decoration: InputDecoration(
                 hintText: 'กรุณากรอกชื่อ-นามสกุล',
                 contentPadding: EdgeInsets.all(14),
@@ -85,6 +132,7 @@ class _RegisterAgentFormState extends State<RegisterAgentForm> {
             ),
             SizedBox(height: 10),
             TextField(
+              // controller: _idCardNumberController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(14),

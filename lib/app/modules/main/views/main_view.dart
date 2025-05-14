@@ -14,7 +14,7 @@ class MainView extends GetView<MainController> {
       () => Scaffold(
         body: IndexedStack(
           index: controller.currentIndex.value,
-          children: [HomeView(), const AgentView()],
+          children: [HomeView(), AgentView()],
         ),
         bottomNavigationBar: const Navbar(),
       ),
