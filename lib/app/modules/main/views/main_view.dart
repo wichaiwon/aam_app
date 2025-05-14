@@ -1,6 +1,7 @@
 import 'package:aam_app/app/modules/agent/views/agent_view.dart';
 import 'package:aam_app/app/modules/home/views/home_view.dart';
 import 'package:aam_app/app/modules/main/controllers/main_controller.dart';
+import 'package:aam_app/app/modules/notification/views/notification_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:aam_app/app/modules/widgets/navbar.dart';
@@ -14,7 +15,7 @@ class MainView extends GetView<MainController> {
       () => Scaffold(
         body: IndexedStack(
           index: controller.currentIndex.value,
-          children: [HomeView(), AgentView()],
+          children: [HomeView(), AgentView(), NotificationView()],
         ),
         bottomNavigationBar: const Navbar(),
       ),

@@ -7,6 +7,7 @@ abstract class Routes {
   static const MAIN = _Paths.MAIN;
   static const AGENT = _Paths.AGENT;
   static const LOGIN = _Paths.LOGIN;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const MAIN = '/main';
   static const AGENT = '/agent';
   static const LOGIN = '/login';
+  static const NOTIFICATION = '/notification';
 }

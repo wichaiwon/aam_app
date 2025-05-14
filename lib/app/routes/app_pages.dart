@@ -1,5 +1,7 @@
+import 'package:aam_app/app/modules/home/views/home_view.dart';
 import 'package:aam_app/app/modules/login/bindings/login_binding.dart';
 import 'package:aam_app/app/modules/login/views/login_view.dart';
+import 'package:aam_app/app/modules/notification/views/notification_view.dart';
 import 'package:get/get.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
@@ -23,8 +25,14 @@ class AppPages {
       page: () => LoginView(),
       binding: LoginBinding(),
     ),
+    GetPage(name: _Paths.HOME, page: () => HomeView(), binding: MainBinding()),
     GetPage(
-      name: _Paths.HOME,
+      name: _Paths.NOTIFICATION,
+      page: () => NotificationView(),
+      binding: MainBinding(),
+    ),
+    GetPage(
+      name: _Paths.AGENT,
       page: () => const MainView(),
       binding: MainBinding(),
     ),

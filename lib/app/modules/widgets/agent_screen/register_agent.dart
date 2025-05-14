@@ -57,7 +57,7 @@ class RegisterAgent extends StatelessWidget {
             onPressed: () {
               Get.to(
                 () => RegisterAgentForm(),
-                transition: Transition.zoom,
+                transition: Transition.rightToLeft,
                 duration: Duration(milliseconds: 500),
               );
             },
